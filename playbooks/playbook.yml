@@ -1,0 +1,9 @@
+---
+- hosts: webserver
+  vars: 
+    pkg: zip
+  tasks: 
+    - name: Install nginx webserver
+      apt: name={{pkg}} state=present
+    - name: start the service
+      service: name={{pkg}} state=started

@@ -1,0 +1,5 @@
+---
+- hosts: webserver
+  tasks:
+    - name: create a user
+      command: apt-get install zip -y creates=/home/ubuntu/sample.txt

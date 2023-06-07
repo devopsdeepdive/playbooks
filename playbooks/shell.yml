@@ -1,0 +1,5 @@
+---
+- hosts: webserver
+  tasks:
+    - name: create a user
+      shell: /home/ubuntu/sample.sh

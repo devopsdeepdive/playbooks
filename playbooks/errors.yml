@@ -1,0 +1,14 @@
+---
+- hosts: webserver
+  tasks: 
+    - name: Install nginx webserver
+      apt: name=apache2 state=present
+    - name: copy index html file
+      copy: src=index.ht dest=/var/www/html
+      ignore_errors: yes
+      register: result
+    - debug: var=result
+    - name: start the service
+      service: name=apache2 state=started
+      register: result
+    - debug: var=result

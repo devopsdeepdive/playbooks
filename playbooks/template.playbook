@@ -1,0 +1,6 @@
+---
+- hosts: webserver
+  gather_facts: yes
+  tasks: 
+    - name: Shut down Debian flavored systems
+      template: src=template.j2 dest=/home/ubuntu
